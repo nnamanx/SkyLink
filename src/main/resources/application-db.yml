@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: skylink
+  profiles:
+    include:
+      - db
+server:
+  port: 8080
