@@ -39,6 +39,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+
+    implementation 'org.springframework.security.oauth:spring-security-oauth2'
+    implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure'
+
 }
 
 dependencyManagement {
