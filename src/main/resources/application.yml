@@ -4,6 +4,6 @@ spring:
   profiles:
     include:
       - db
-      - oauth2
 server:
   port: 8080
+

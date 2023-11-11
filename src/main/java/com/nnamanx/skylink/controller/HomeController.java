@@ -12,20 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class HomeController {
 
-    // http://localhost:8080/login/oauth2/github
-
+// http://localhost:8080/login/oauth2/github
     @GetMapping("/")
     public String home() {
-        return "home";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
+        return "Hello, Home!";
     }
 
     @GetMapping("/secured")
     public String secured() {
-        return "secured";
+        return "Hello, Secured!";
     }
+
 }
