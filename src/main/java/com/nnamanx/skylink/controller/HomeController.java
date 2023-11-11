@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class HomeController {
 
+    // http://localhost:8080/login/oauth2/github
+
     @GetMapping("/")
     public String home() {
         return "home";
