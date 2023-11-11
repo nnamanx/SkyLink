@@ -30,5 +30,6 @@ public class EndUser {
     String passportSeria;
     String access_token;
     String refresh_token;
+    Boolean isConfirmed;
 
 }

@@ -9,5 +9,6 @@ public class Message {
     public static final String USERNAME_IS_URGENT = "Enter a Username";
     public static final String PASSPORT_FIN_IS_URGENT = "Enter your passport fin";
     public static final String PASSPORT_SERIA_IS_URGENT = "Enter your passport seria";
+    public static final String TOKEN_IS_URGENT = "Enter confirmation token";
 }
 

@@ -28,7 +28,7 @@ public class UserRequest {
     String username;
 
     @NotBlank(message = PASSWORD_IS_NOT_VALID)
-    @Size(min = 6, message = PASSWORD_REGEX)
+    @Size(min = 8, message = PASSWORD_REGEX)
     String password;
 
     String phoneNumber;
