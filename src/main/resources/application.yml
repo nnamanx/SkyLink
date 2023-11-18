@@ -4,6 +4,8 @@ spring:
   profiles:
     include:
       - db
+      - email
+      - security
 server:
   port: 8080
   servlet:
