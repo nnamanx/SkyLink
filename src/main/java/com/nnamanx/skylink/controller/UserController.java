@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("${server.servlet.context-path}/user-ms")
+@RequestMapping("${server.servlet.context-path}//api/v1/auth/user-ms")
 public class UserController {
 
     private final UserService userService;
