@@ -56,5 +56,27 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
 
+    @Override
+    public boolean confirmAccount(String confirmationToken) {
 
+        Optional<EndUser> userOptional = userRepository.findByConfirmationToken(confirmationToken);
+
+        if (userOptional.isPresent()) {
+
+            EndUser user = userOptional.get();
+
+            if (!user.isTokenExpired()) {
+
+                user.setIsConfirmed(true);
+
+                user.setConfirmationToken(null);
+
+                userRepository.save(user);
+
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

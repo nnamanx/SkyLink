@@ -5,12 +5,10 @@ import com.nnamanx.skylink.model.dto.request.UserRequest;
 import com.nnamanx.skylink.model.dto.response.AuthenticationResponse;
 import com.nnamanx.skylink.model.dto.response.GeneralResponse;
 import com.nnamanx.skylink.service.AuthenticationService;
+import com.nnamanx.skylink.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +21,7 @@ import java.io.IOException;
 public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
+    private final UserService userService;
 
     @PostMapping("/register")
     public GeneralResponse register(@RequestBody UserRequest request) {
@@ -37,5 +36,16 @@ public class AuthenticationController {
     @PostMapping("/refresh-token")
     public void refreshToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
         authenticationService.refreshToken(request, response);
+    }
+
+    @GetMapping("/confirmation")
+    public ResponseEntity<GeneralResponse> confirmAccount(@RequestParam("token") String confirmationToken) {
+        boolean confirmationResult = userService.confirmAccount(confirmationToken);
+
+        if (confirmationResult) {
+            return ResponseEntity.ok(new GeneralResponse("Account confirmed successfully"));
+        } else {
+            return ResponseEntity.badRequest().body(new GeneralResponse("Invalid or expired confirmation token"));
+        }
     }
 }

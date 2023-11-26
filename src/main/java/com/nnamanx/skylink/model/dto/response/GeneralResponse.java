@@ -17,4 +17,6 @@ public class GeneralResponse {
      HttpStatus httpStatus;
      LocalDate time;
 
+     public GeneralResponse(String accountConfirmedSuccessfully) {
+     }
 }

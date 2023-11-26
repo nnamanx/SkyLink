@@ -9,7 +9,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -34,12 +36,18 @@ public class EndUser implements UserDetails {
     String access_token;
     String refresh_token;
     Boolean isConfirmed;
+    String confirmationToken;
+    Date expirationDate;
 
     @Enumerated(EnumType.STRING)
     RoleType role;
 
     @OneToMany(mappedBy = "user")
     List<Token> tokens;
+
+    public boolean isTokenExpired() {
+        return expirationDate != null && expirationDate.before(new Date());
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

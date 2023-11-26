@@ -13,5 +13,6 @@ public interface UserService {
     ResponseEntity<Map<String, String>> updatePassword(String username, String newPassword);
 
     Optional<EndUser> findByUsername(String username);
+    boolean confirmAccount(String confirmationToken);
 
 }
