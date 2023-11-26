@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/demo-controller")
+@RequestMapping("/skylink/api/v1/demo-controller")
 public class DemoController {
 
     @GetMapping

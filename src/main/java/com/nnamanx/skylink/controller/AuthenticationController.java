@@ -19,7 +19,7 @@ import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/auth")
+@RequestMapping("skylink/api/v1/auth")
 public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
