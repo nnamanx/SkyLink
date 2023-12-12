@@ -1,10 +1,7 @@
 package com.namanx.clientms.model.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -24,4 +21,8 @@ public class ConfirmationToken {
 
     String confirmationToken;
     LocalDateTime expirationDate;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
+    Client client;
 }
