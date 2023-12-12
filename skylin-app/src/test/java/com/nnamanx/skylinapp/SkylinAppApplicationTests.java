@@ -1,10 +1,10 @@
-package com.nnamanx.skylink;
+package com.nnamanx.skylinapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SkylinkApplicationTests {
+class SkylinAppApplicationTests {
 
     @Test
     void contextLoads() {
