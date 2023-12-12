@@ -3,7 +3,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: 12131
-    url: jdbc:postgresql://localhost:5432/skylink_client_ms
+    url: jdbc:postgresql://localhost:5434/skylink_client_ms
   jpa:
     show-sql: true
     hibernate:
