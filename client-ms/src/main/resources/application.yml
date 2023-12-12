@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: skylink-client-ms
+  profiles:
+    include:
+      - db
+server:
+  port: 8080
