@@ -1,5 +1,6 @@
 package com.namanx.clientms.model.entity;
 
+import com.namanx.clientms.model.enums.TokenType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -19,6 +20,11 @@ public class Token {
     Long id;
 
     String token;
+
+    @Column(nullable = false)
+    TokenType tokenType; // "ACCESS" or "REFRESH"
+
+    @Column(nullable = false)
     LocalDateTime expirationDate;
 
     @OneToOne(fetch = FetchType.LAZY)
