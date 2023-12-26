@@ -9,4 +9,5 @@ public class Constants {
     public final static String INVALID_EMAIL = "Email is not valid.";
     public final static String INVALID_PASSWORD = "Password should contain at least 8 characters, one uppercase letter and one number.";
     public final static String INVALID_BIRTHDATE = "The date is not valid.";
+    public final static String TOKEN_NOT_FOUND = "Token is not found!";
 }
