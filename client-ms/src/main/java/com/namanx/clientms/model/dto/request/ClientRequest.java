@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
 
-import static com.namanx.clientms.model.constant.Constants.*;
+import static com.namanx.clientms.model.constant.Messages.*;
 
 @Builder
 @Data

@@ -1,6 +1,6 @@
 package com.namanx.clientms.model.constant;
 
-public class Constants {
+public class Messages {
 
     public final static String ENTER_USER_NAME = "Enter a username.";
     public final static String ENTER_EMAIL = "Enter an email address.";

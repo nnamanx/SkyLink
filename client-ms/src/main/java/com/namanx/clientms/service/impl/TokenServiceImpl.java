@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-import static com.namanx.clientms.model.constant.Constants.TOKEN_NOT_FOUND;
+import static com.namanx.clientms.model.constant.Messages.TOKEN_NOT_FOUND;
 
 @Service
 @RequiredArgsConstructor

@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import static com.namanx.clientms.model.constant.Constants.*;
+import static com.namanx.clientms.model.constant.Messages.*;
 
 @Builder
 @Data
