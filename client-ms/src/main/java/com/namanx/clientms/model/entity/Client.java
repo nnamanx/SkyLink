@@ -25,8 +25,15 @@ public class Client implements UserDetails {
     String phoneNumber;
     String email;
     String birthdate;
+
+    @Column(unique = true)
     String fin;
+
+    @Column(unique = true)
     String seria;
+
+    @Builder.Default
+    Boolean isEnabled = false;
 
     // Relations
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -35,6 +42,7 @@ public class Client implements UserDetails {
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     ConfirmationToken confirmationToken;
 
+    // unedited
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -42,22 +50,22 @@ public class Client implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return isEnabled;
     }
 }
 
