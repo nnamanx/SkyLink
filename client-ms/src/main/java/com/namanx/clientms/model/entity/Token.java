@@ -27,7 +27,7 @@ public class Token {
     @Column(nullable = false)
     LocalDateTime expirationDate;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "client_id")
     Client client;
 

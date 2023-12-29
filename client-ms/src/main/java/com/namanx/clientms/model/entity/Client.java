@@ -1,12 +1,15 @@
 package com.namanx.clientms.model.entity;
 
+import com.namanx.clientms.model.enums.RoleType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
@@ -35,9 +38,12 @@ public class Client implements UserDetails {
     @Builder.Default
     Boolean isEnabled = false;
 
+    @Enumerated(EnumType.STRING)
+    RoleType role;
+
     // Relations
-    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    Token token;
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    List<Token> tokens;
 
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     ConfirmationToken confirmationToken;
@@ -45,7 +51,8 @@ public class Client implements UserDetails {
     // unedited
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override
