@@ -3,7 +3,6 @@ package com.namanx.clientms.service;
 import com.namanx.clientms.model.entity.Client;
 import com.namanx.clientms.model.entity.Token;
 import com.namanx.clientms.model.enums.TokenType;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
