@@ -33,7 +33,7 @@ public class Client implements UserDetails {
     String fin;
 
     @Column(unique = true)
-    String seria;
+    String serialNumber;
 
     @Builder.Default
     Boolean isEnabled = false;
@@ -48,7 +48,7 @@ public class Client implements UserDetails {
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     ConfirmationToken confirmationToken;
 
-    // unedited
+    // User details' methods
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 

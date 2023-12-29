@@ -34,8 +34,8 @@ public class ClientRequest {
     @Pattern(regexp = "^[+\\d][\\d\\s()-]*$", message = "Invalid phone number format")
     String phoneNumber;
 
-    String fin;
-    String serialNumber;
+    private String fin;
+    private String serialNumber;
 
     @Past(message = INVALID_BIRTHDATE) // whether the date is in the past
     LocalDateTime birthdate;
