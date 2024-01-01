@@ -4,5 +4,6 @@ spring:
   profiles:
     include:
       - db
+      - security
 server:
   port: 8081

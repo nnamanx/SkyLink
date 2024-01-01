@@ -1,0 +1,5 @@
+application:
+  security:
+    secret-key: E2BDF22557B68CF912C9A71377F365937211554392BE88F41B3B98B1CC
+    access-token-expiration: 900000
+    refresh-token-expiration: 1800000
