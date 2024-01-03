@@ -2,6 +2,8 @@
 
 Skylink Airline Management is a software solution that digitally handles issues such as purchasing flight tickets and hotel reservations.
 
+![backend.png](..%2Fbackend.png)
+
 ## User Microservice (user-ms)
 
 ### Authentication, Authorization, and Registration Service
