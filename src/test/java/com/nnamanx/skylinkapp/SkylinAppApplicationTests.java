@@ -1,4 +1,4 @@
-package com.nnamanx.skylinapp;
+package com.nnamanx.skylinkapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
