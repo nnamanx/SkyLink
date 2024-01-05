@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: skylink-booking-ms
+  profiles:
+    include:
+      - db
+server:
+  port: 8083
