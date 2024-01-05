@@ -1,10 +1,7 @@
 package com.namanx.booking_ms.model.entity;
 
 import com.namanx.booking_ms.model.enums.PaymentMethod;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -26,5 +23,13 @@ public class Payment {
     PaymentMethod paymentMethod;
     Boolean status;
 
-    //Long client_id
+    Long client_id;
+
+    @ManyToOne
+    @JoinColumn(name = "ticket_id", referencedColumnName = "ticketId")
+    Ticket ticket;
+
+    @OneToOne
+    @JoinColumn(name = "reservation_id", referencedColumnName = "reservationId")
+    HotelReservation hotelReservation;
 }

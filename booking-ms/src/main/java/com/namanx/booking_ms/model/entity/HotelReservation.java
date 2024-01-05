@@ -25,6 +25,9 @@ public class HotelReservation {
     LocalDateTime checkOutDateTime;
     Double price;
 
-    // Long client_id
+    Long client_id;
+
+    @OneToOne(mappedBy = "hotelReservation", cascade = CascadeType.ALL)
+    Payment payment;
 
 }

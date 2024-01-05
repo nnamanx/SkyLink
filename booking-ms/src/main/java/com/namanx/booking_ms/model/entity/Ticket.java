@@ -1,13 +1,11 @@
 package com.namanx.booking_ms.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -27,6 +25,10 @@ public class Ticket {
     LocalDateTime arrivalDateTime;
     Double price;
 
-    // Long flight_id;
+    Long flight_id;
+    Long client_id;
+
+    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+    List<Payment> payments;
 
 }
