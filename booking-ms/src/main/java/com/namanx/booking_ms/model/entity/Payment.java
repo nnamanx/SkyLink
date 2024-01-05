@@ -17,19 +17,21 @@ public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    Long payment_id;
     Double amount;
     LocalDate paymentDate;
+    @Enumerated(EnumType.STRING)
     PaymentMethod paymentMethod;
     Boolean status;
 
     Long client_id;
 
     @ManyToOne
-    @JoinColumn(name = "ticket_id", referencedColumnName = "ticketId")
+    @JoinColumn(name = "ticket_id", referencedColumnName = "ticket_Id")
     Ticket ticket;
 
-    @OneToOne
-    @JoinColumn(name = "reservation_id", referencedColumnName = "reservationId")
+    @ManyToOne
+    @JoinColumn(name = "reservation_id", referencedColumnName = "reservation_Id")
     HotelReservation hotelReservation;
+
 }

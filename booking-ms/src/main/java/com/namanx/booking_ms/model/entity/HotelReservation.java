@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,7 +18,7 @@ public class HotelReservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    Long reservation_id;
     String hotelName;
     @Enumerated(EnumType.STRING)
     RoomType roomType;
@@ -27,7 +28,7 @@ public class HotelReservation {
 
     Long client_id;
 
-    @OneToOne(mappedBy = "hotelReservation", cascade = CascadeType.ALL)
-    Payment payment;
+    @OneToMany(mappedBy = "hotelReservation")
+    private List<Payment> payments;
 
 }
