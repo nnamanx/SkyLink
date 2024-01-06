@@ -10,4 +10,8 @@ public class Messages {
     public static final String NULL_PRICE = "Price cannot be null";
     public static final String NEGATIVE_PRICE = "Price must be positive";
     public static final String NULL_PAYMENT_METHOD = "Payment method must not be blank";
+    public static final String INVALID_CHECK_IN_DATE = "Check-in date must be in the future";
+    public static final String INVALID_CHECK_OUT_DATE = "Check-out date must be in the future";
+    public static final String BLANK_ROOM_TYPE = "Room type must not be blank";
+    public static final String BLANK_HOTEL_NAME = "Hotel name must not be blank";
 }
