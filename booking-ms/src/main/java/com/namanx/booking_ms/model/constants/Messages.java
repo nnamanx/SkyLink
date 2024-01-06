@@ -9,4 +9,5 @@ public class Messages {
     public static final String INVALID_ARRIVAL_DATE = "Arrival date must be in the future";
     public static final String NULL_PRICE = "Price cannot be null";
     public static final String NEGATIVE_PRICE = "Price must be positive";
+    public static final String NULL_PAYMENT_METHOD = "Payment method must not be blank";
 }
