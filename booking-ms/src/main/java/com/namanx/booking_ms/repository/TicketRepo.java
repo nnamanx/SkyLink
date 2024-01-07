@@ -9,5 +9,4 @@ import java.util.List;
 @Repository
 public interface TicketRepo extends JpaRepository<Ticket, Long> {
 
-//    List<Ticket> findByClient_id(Long clientId);
 }

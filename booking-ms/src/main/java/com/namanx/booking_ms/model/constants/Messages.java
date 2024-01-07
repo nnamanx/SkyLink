@@ -14,4 +14,5 @@ public class Messages {
     public static final String INVALID_CHECK_OUT_DATE = "Check-out date must be in the future";
     public static final String BLANK_ROOM_TYPE = "Room type must not be blank";
     public static final String BLANK_HOTEL_NAME = "Hotel name must not be blank";
+    public static final String TICKET_NOT_FOUND = "The ticket is not valid ";
 }

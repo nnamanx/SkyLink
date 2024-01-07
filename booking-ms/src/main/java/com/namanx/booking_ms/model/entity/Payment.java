@@ -27,7 +27,7 @@ public class Payment {
     Long client_id;
 
     @ManyToOne
-    @JoinColumn(name = "ticket_id", referencedColumnName = "ticket_Id")
+    @JoinColumn(name = "id", referencedColumnName = "id")
     Ticket ticket;
 
     @ManyToOne
