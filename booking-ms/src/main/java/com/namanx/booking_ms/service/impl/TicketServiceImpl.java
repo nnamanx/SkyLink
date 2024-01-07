@@ -18,11 +18,6 @@ public class TicketServiceImpl implements TicketService {
     private final TicketRepo ticketRepo;
 
     @Override
-    public Optional<Ticket> getTicketsByTicketId(Long ticket_id) {
-        return ticketRepo.findById(ticket_id);
-    }
-
-    @Override
     public Ticket purchaseTicket(Ticket ticket) {
         return ticketRepo.save(ticket);
     }
