@@ -1,5 +1,7 @@
 package com.namanx.booking_ms.service.impl;
 
+import com.namanx.booking_ms.helper.TicketMapper;
+import com.namanx.booking_ms.model.dto.request.TicketRequest;
 import com.namanx.booking_ms.model.entity.Ticket;
 import com.namanx.booking_ms.repository.TicketRepo;
 import com.namanx.booking_ms.service.TicketService;
@@ -16,20 +18,24 @@ import static com.namanx.booking_ms.model.constants.Messages.TICKET_NOT_FOUND;
 public class TicketServiceImpl implements TicketService {
 
     private final TicketRepo ticketRepo;
+    private final TicketMapper ticketMapper;
 //    private final FlightMicroserviceClient flightMicroserviceClient; // Assuming you have a Feign client for Flight Microservice
 //    private final UserMicroserviceClient userMicroserviceClient; // Assuming you have a Feign client for User Microservice
 
 
     @Override
     public Ticket getTicketById(Long ticketId) {
+
         return ticketRepo.findById(ticketId).orElseThrow(() -> new EntityNotFoundException(TICKET_NOT_FOUND + ticketId));
     }
 
     @Override
-    public Ticket purchaseTicket(Ticket ticket) {
+    public Ticket purchaseTicket(TicketRequest ticketRequest) {
+
+        Ticket ticket = ticketMapper.mapToTicket(ticketRequest);
 
         // Validate ticket details
-//        validateTicket(ticket);
+        validateTicket(ticket);
 
         // Check if the flight exists and is available
 //        validateFlight(ticket.getFlight_id());
